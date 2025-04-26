@@ -299,7 +299,7 @@ with tab2:
         st.session_state.eficiencia_resultado = eficiencia_resultado
 
         # Classificar resultado
-        classificacao, cor, descricao = classificar_eficiencia(eficiencia_resultado/10)
+        classificacao, cor, descricao = classificar_eficiencia(eficiencia_resultado)
 
         # Exibir resultados
         st.markdown('<div class="subheader">Resultados da Avaliação</div>', unsafe_allow_html=True)
@@ -310,7 +310,7 @@ with tab2:
         with col1:
             st.markdown('<div class="card">', unsafe_allow_html=True)
             # Medidor de eficiência
-            gauge_chart = criar_gauge(eficiencia_resultado/10, classificacao, cor)
+            gauge_chart = criar_gauge(eficiencia_resultado, classificacao, cor)
             st.plotly_chart(gauge_chart, use_container_width=True)
 
             # Classificação
